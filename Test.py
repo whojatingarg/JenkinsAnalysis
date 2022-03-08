@@ -43,16 +43,16 @@ class DurationMetrics:
         print("###############################################################")
         print(myJobBuilds)
 
-        # for build in myJobBuilds:
-        #     buildNumber = build.get('number')
-        #     buildInfo = self.server.get_build_info('Test', buildNumber)
-        #     #print(buildInfo)
-        #     buildDuration = buildInfo.get('duration')
-        #     self.buildDurations.append((buildDuration / 1000))
-        #     self.totalBuildDuration += buildDuration
-        #     self.numberOfBuilds += 1.0
-        #     buildTimestamp = buildInfo.get('timestamp')
-        #     self.buildTimestamps.append(buildTimestamp)
+        for build in myJobBuilds:
+            buildNumber = build.get('number')
+            buildInfo = self.server.get_build_info(job.get("name"), buildNumber)
+            #print(buildInfo)
+            buildDuration = buildInfo.get('duration')
+            self.buildDurations.append((buildDuration / 1000))
+            self.totalBuildDuration += buildDuration
+            self.numberOfBuilds += 1.0
+            buildTimestamp = buildInfo.get('timestamp')
+            self.buildTimestamps.append(buildTimestamp)
 
     def connectToJenkins(self):
 
@@ -94,7 +94,7 @@ def main(argv):
     durationMetrics = DurationMetrics(username,password)
     durationMetrics.connectToJenkins()
     durationMetrics.getJobDuration()
-   # print("Build Average Duration: %.2f seconds" % durationMetrics.calculateAverageDuration())
+    print("Build Average Duration: %.2f seconds" % durationMetrics.calculateAverageDuration())
     # function to show GUI representation of job durations
     #durationMetrics.plotJobDuration()
 
