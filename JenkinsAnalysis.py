@@ -95,7 +95,8 @@ def main(argv):
     durationMetrics.connectToJenkins()
     durationMetrics.getJobDuration()
     print("Build Average Duration: %.2f seconds" % durationMetrics.calculateAverageDuration())
-    durationMetrics.plotJobDuration()
+    # function to show GUI representation of job durations
+    #durationMetrics.plotJobDuration()
 
 
 
