@@ -39,8 +39,6 @@ class DurationMetrics:
         for job in jenkinsJobs:
             print("sss")
             print(job.get_job_info())
-            jobInfo = job.get_job_info()
-            print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" + jobInfo)
 
             print("@@@@@@@@@@")
             #print(job)
