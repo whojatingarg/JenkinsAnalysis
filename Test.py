@@ -34,6 +34,9 @@ class DurationMetrics:
         #myJobBuilds = myJob.get('builds')
         myJobBuilds = []
         for job in jenkinsJobs:
+            print("@@@@@@@@@@")
+            print(job)
+            print("@@@@@@@@@@")
             myJobBuilds.append(job.get('builds'))
         print("###############################################################")
         print(myJobBuilds)
