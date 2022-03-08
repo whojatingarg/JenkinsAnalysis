@@ -17,8 +17,8 @@ class DurationMetrics:
     server = None
 
     def __init__(self,username,password):
-        self.username = jatinkumar
-        self.password = jatinkumar
+        self.username = username
+        self.password = password
 
     def calculateAverageDuration(self):
         #TODO: calculate average duration
