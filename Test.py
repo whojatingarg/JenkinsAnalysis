@@ -45,6 +45,9 @@ class DurationMetrics:
         print("###############################################################")
         print(myJobBuilds)
         for build in myJobBuilds:
+            print("buldddddddddddddddddddddddddddddddddddddddddddddd")
+            print(build)
+            print("buldddddddddddddddddddddddddddddddddddddddddddddd")
             buildNumber = build.get('number')
             buildInfo = self.server.get_build_info(job.get("name"), buildNumber)
             #print(buildInfo)
