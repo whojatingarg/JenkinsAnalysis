@@ -32,7 +32,7 @@ class DurationMetrics:
         myJobBuilds = []
         for job in jenkinsJobs:
             myJob = self.server.get_job_info(job, 0, True)
-            myJobBuilds = myJob.get('builds')
+            myJobBuilds.append(myJob.get('builds'))
         
         print(myJobBuilds)
 
