@@ -48,15 +48,15 @@ class DurationMetrics:
             print("buldddddddddddddddddddddddddddddddddddddddddddddd")
             print(build)
             print("buldddddddddddddddddddddddddddddddddddddddddddddd")
-            buildNumber = build.get('number')
-            buildInfo = self.server.get_build_info(job.get("name"), buildNumber)
-            #print(buildInfo)
-            buildDuration = buildInfo.get('duration')
-            self.buildDurations.append((buildDuration / 1000))
-            self.totalBuildDuration += buildDuration
-            self.numberOfBuilds += 1.0
-            buildTimestamp = buildInfo.get('timestamp')
-            self.buildTimestamps.append(buildTimestamp)
+            # buildNumber = build.get('number')
+            # buildInfo = self.server.get_build_info(job.get("name"), buildNumber)
+            # #print(buildInfo)
+            # buildDuration = buildInfo.get('duration')
+            # self.buildDurations.append((buildDuration / 1000))
+            # self.totalBuildDuration += buildDuration
+            # self.numberOfBuilds += 1.0
+            # buildTimestamp = buildInfo.get('timestamp')
+            # self.buildTimestamps.append(buildTimestamp)
 
     def connectToJenkins(self):
 
