@@ -28,35 +28,24 @@ class DurationMetrics:
     def getJobDuration(self):
         # TODO: get job duration
         jenkinsJobs = self.server.get_all_jobs()
-        print(jenkinsJobs)
-        myJob = self.server.get_job_info('Test', 0, True)
-        # print("aaaaaaaaaaaa")
-        # print(myJob)
-        
-        #print(myJob)
-        #myJobBuilds = myJob.get('builds')
-      #  myJobBuilds = []
+        #print(jenkinsJobs)
+        myJobBuilds = []
         for job in jenkinsJobs:
-            print("aaaaaaaaaaaaaaaaaa")
-            buildInfo = self.server.get_job_info(job.get("name"), 0, True)
-            print("ppppppppppppppppp")
-            print(buildInfo)
-            myJobBuilds.append(buildInfo.get('builds'))
-        print("###############################################################")
+            myJob = self.server.get_job_info(job, 0, True)
+            myJobBuilds = myJob.get('builds')
+        
         print(myJobBuilds)
-        for build in myJobBuilds:
-            print("buldddddddddddddddddddddddddddddddddddddddddddddd")
-            print(build)
-            print("buldddddddddddddddddddddddddddddddddddddddddddddd")
-            # buildNumber = build.get('number')
-            # buildInfo = self.server.get_build_info(job.get("name"), buildNumber)
-            # #print(buildInfo)
-            # buildDuration = buildInfo.get('duration')
-            # self.buildDurations.append((buildDuration / 1000))
-            # self.totalBuildDuration += buildDuration
-            # self.numberOfBuilds += 1.0
-            # buildTimestamp = buildInfo.get('timestamp')
-            # self.buildTimestamps.append(buildTimestamp)
+
+        # for build in myJobBuilds:
+        #     buildNumber = build.get('number')
+        #     buildInfo = self.server.get_build_info('Test', buildNumber)
+        #     #print(buildInfo)
+        #     buildDuration = buildInfo.get('duration')
+        #     self.buildDurations.append((buildDuration / 1000))
+        #     self.totalBuildDuration += buildDuration
+        #     self.numberOfBuilds += 1.0
+        #     buildTimestamp = buildInfo.get('timestamp')
+        #     self.buildTimestamps.append(buildTimestamp)
 
     def connectToJenkins(self):
 
